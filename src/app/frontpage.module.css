@@ -1,0 +1,7 @@
+.reviews {
+	color: var(--dark-blue);
+	text-align: center;
+
+	gap: 35px;
+	padding-bottom: 110px;
+}

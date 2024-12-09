@@ -12,6 +12,13 @@ export default {
 				background: "var(--background)",
 				foreground: "var(--foreground)",
 			},
+			fontFamily: {
+				inter: ["var(--font-inter)"],
+				squarePeg: ["var(--font-square-peg)"],
+				quicksand: ["var(--font-quicksand)"],
+				adventPro: ["var(--font-advent-pro)"],
+				beVietnamPro: ["var(--font-be-vietnam-pro)"],
+			},
 		},
 	},
 	plugins: [],

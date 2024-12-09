@@ -7,4 +7,24 @@
 	--dark-blue: #355675;
 	--light-purple: #c1aece;
 	--dark-purple: #9478a8;
+
+	--hero-overlay: #c6b2c49a;
+
+	color: white;
+}
+
+.sectionWithTitle {
+	padding: 70px 25px 40px;
+
+	display: flex;
+	flex-direction: column;
+	gap: 70px;
+
+	& > div {
+		text-align: center;
+	}
+}
+
+.products {
+	background-color: var(--light-purple);
 }
