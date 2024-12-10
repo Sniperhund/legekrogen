@@ -1,6 +1,7 @@
+import { KlubForm } from "@/components/KlubForm"
 import { Hero } from "@/components/Common/Hero"
 
-export default async function Klub() {
+export default function Klub() {
 	return (
 		<>
 			<Hero
@@ -9,6 +10,8 @@ export default async function Klub() {
 				normalTitle="KUNDEKLUB"
 				description="og få eksklusive nyheder før alle andre"
 			/>
+
+			<KlubForm />
 		</>
 	)
 }

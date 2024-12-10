@@ -8,8 +8,6 @@ export const FrequentlyAskedQuestions = async () => {
 		}
 	).then((res) => res.json())
 
-	console.log(questionsAndAnswers)
-
 	return (
 		<section className="py-8 px-10 flex flex-col gap-10">
 			{questionsAndAnswers.map((qa, i) => (

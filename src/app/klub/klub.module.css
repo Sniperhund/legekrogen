@@ -1,0 +1,43 @@
+.form {
+	padding: 64px 28px;
+
+	display: flex;
+	flex-direction: column;
+	gap: 36px;
+
+	& input,
+	& textarea {
+		padding: 14px 28px;
+
+		border: 1px solid var(--dark-blue);
+		border-radius: 25px;
+
+		display: block;
+		width: 100%;
+
+		font-size: 1.5rem;
+		font-family: var(--font-advent-pro);
+		color: var(--dark-blue);
+
+		resize: none;
+	}
+
+	& input::placeholder,
+	& textarea::placeholder {
+		font-weight: 200;
+		font-style: italic;
+	}
+
+	& input[type="submit"] {
+		font-family: var(--font-inter);
+
+		font-size: 1.25rem;
+		text-align: center;
+		text-transform: uppercase;
+		color: white;
+
+		padding: 1rem;
+		background-color: var(--dark-purple);
+		border-radius: 9999px;
+	}
+}
