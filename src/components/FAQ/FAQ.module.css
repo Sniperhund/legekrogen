@@ -1,0 +1,25 @@
+.faqQuestion {
+	color: var(--dark-blue);
+
+	border: 1px solid var(--dark-blue);
+	border-radius: 25px;
+
+	display: flex;
+	flex-direction: column;
+
+	overflow: hidden;
+
+	& p {
+		font-family: var(--font-be-vietnam-pro);
+		font-weight: 300;
+	}
+
+	& ol {
+		padding: 0 1.25rem;
+		list-style-type: disc;
+	}
+
+	& li {
+		margin: 0.5rem 0;
+	}
+}

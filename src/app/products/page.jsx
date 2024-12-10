@@ -1,6 +1,5 @@
 import { Hero } from "@/components/Common/Hero"
 import { Product } from "@/components/Product/Product"
-import { Review } from "@/components/Review/Review"
 
 export default async function Products() {
 	let products = await fetch("https://legekrogen.webmcdm.dk/products/").then(

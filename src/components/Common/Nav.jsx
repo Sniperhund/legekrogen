@@ -1,13 +1,19 @@
 "use client"
 
 import Link from "next/link"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import styles from "@/components/Common/Common.module.css"
-import Image from "next/image"
 import { FaBars, FaXmark } from "react-icons/fa6"
+import { usePathname } from "next/navigation"
 
 export const Nav = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+	const pathname = usePathname()
+
+	useEffect(() => {
+		setIsMenuOpen(false)
+	}, [pathname])
 
 	return (
 		<nav className={styles.nav}>
@@ -18,7 +24,11 @@ export const Nav = () => {
 
 				<FaBars size={28} onClick={() => setIsMenuOpen(true)} />
 			</div>
-			<ul className={isMenuOpen ? styles.menuShown : styles.menuHidden}>
+			<ul
+				className={`${styles.menu} ${
+					isMenuOpen ? styles.menuShown : styles.menuHidden
+				}`}
+			>
 				<FaXmark
 					size={64}
 					onClick={() => setIsMenuOpen(false)}

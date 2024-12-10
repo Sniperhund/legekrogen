@@ -45,6 +45,7 @@ export const Hero = ({
 		return () => window.removeEventListener("resize", calculateHeight)
 	}, [])
 
+	// TODO: Move the image to a next/image component, so it optimizes the image
 	return (
 		<section
 			className={`${className} ${styles.hero}`}

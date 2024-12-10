@@ -4,12 +4,11 @@
 	color: white;
 }
 
-.menuShown {
+.menu {
 	position: fixed;
 	top: 0;
 	left: 0;
 
-	transform: translateY(0);
 	transition: transform 0.3s ease-in-out;
 
 	width: 100vw;
@@ -28,8 +27,11 @@
 	gap: 39px;
 }
 
+.menuShown {
+	transform: translateY(0);
+}
+
 .menuHidden {
-	position: fixed;
 	transform: translateY(100vh);
 }
 
