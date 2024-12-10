@@ -1,8 +1,9 @@
 import { Suspense } from "react"
 import { Product } from "./Product"
 
-// Optimize this using ISR
+// TODO: Optimize this using ISR
 export const Products = async ({ recommended = false, title }) => {
+	// Using caching cuts the response time (for this fetch) from 100-150ms to 0-20ms (in my experience)
 	let products = await fetch("https://legekrogen.webmcdm.dk/products/", {
 		cache: "force-cache",
 	}).then((res) => res.json())

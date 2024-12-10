@@ -1,7 +1,14 @@
+import { Hero } from "@/components/Common/Hero"
+
 export default async function Klub() {
 	return (
 		<>
-			<h1>Kundeklubben</h1>
+			<Hero
+				imageSrc="/heros/medlem.jpg"
+				fancyTitle="Bliv medlem af vores"
+				normalTitle="KUNDEKLUB"
+				description="og få eksklusive nyheder før alle andre"
+			/>
 		</>
 	)
 }

@@ -4,13 +4,17 @@ import { Nav } from "@/components/Common/Nav"
 import { FreeDeliveryNotice } from "@/components/Common/FreeDeliveryNotice"
 import { Newsletter } from "@/components/Common/Newsletter"
 import { Footer } from "@/components/Common/Footer"
+import { headers } from "next/headers"
 
 export const metadata = {
 	title: "Legekrogen",
 	description: "",
 }
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+	const headerList = await headers()
+	const pathname = await headerList.get("x-current-path")
+
 	return (
 		<html lang="en">
 			<body className={fontsClassName}>
@@ -19,7 +23,7 @@ export default function RootLayout({ children }) {
 				<FreeDeliveryNotice />
 				<Nav />
 				{children}
-				<Newsletter />
+				{pathname != "/klub" && <Newsletter />}
 				<Footer />
 			</body>
 		</html>
