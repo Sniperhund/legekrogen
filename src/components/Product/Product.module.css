@@ -24,6 +24,10 @@
 		padding-top: 60px;
 
 		font-family: var(--font-be-vietnam-pro);
+
+		& > p:nth-child(3) {
+			margin-bottom: 62px;
+		}
 	}
 }
 
@@ -46,4 +50,17 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.buy {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+
+	width: 100%;
+
+	padding: 16px;
+	background-color: var(--buy-button);
+
+	font-size: 1.25rem;
 }

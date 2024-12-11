@@ -1,23 +1,31 @@
 import styles from "./Product.module.css"
 import Image from "next/image"
+import { BuyButton } from "./BuyButton"
 
 export const Product = ({
-	imageSrc = "",
-	title = "",
-	description = "",
-	price = "",
-	discount = 0,
+	product = { image: "", title: "", description: "", price: 0, discount: 0 },
 }) => {
 	return (
 		<article className={styles.card}>
-			<Image src={imageSrc} alt={title} width={350} height={250} />
+			<Image
+				src={product.image}
+				alt={product.title}
+				width={350}
+				height={250}
+			/>
 
-			{discount > 0 && <div className={styles.discount}>{discount}%</div>}
+			{product.discount > 0 && (
+				<div className={styles.discount}>{product.discount}%</div>
+			)}
 
 			<div className={`${styles.info} space-y-2`}>
-				<h4 className="text-2xl font-thin">{title}</h4>
-				<p className="text-[0.9375rem] font-medium">{description}</p>
-				<p className="text-2xl font-light">{price} kr</p>
+				<h4 className="text-2xl font-thin">{product.title}</h4>
+				<p className="text-[0.9375rem] font-medium">
+					{product.description}
+				</p>
+				<p className="text-2xl font-light">{product.price} kr</p>
+
+				<BuyButton product={product} />
 			</div>
 		</article>
 	)

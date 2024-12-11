@@ -22,14 +22,7 @@ export const Products = async ({ recommended = false, title }) => {
 
 			<Suspense fallback={<div>Loading...</div>}>
 				{products.map((p, i) => (
-					<Product
-						key={i}
-						imageSrc={p.image}
-						title={p.title}
-						description={p.description}
-						price={p.price}
-						discount={p.discountInPercent}
-					/>
+					<Product key={i} product={p} />
 				))}
 			</Suspense>
 		</section>
