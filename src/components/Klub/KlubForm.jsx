@@ -34,22 +34,21 @@ export const KlubForm = () => {
 
 	return (
 		<>
-			{showModal && (
-				<div className={styles.modal}>
-					<h1>Tak!</h1>
+			<div
+				className={`${styles.modal} ${showModal ? styles.active : ""}`}
+			>
+				<h1>Tak!</h1>
 
-					<p>
-						Vi er så glade for at du vil være en del af vores
-						kundeklub
-					</p>
-					<p>
-						Tag et kig på din indbakke. Vi har givet dig fri fragt
-						på din næste ordre.
-					</p>
+				<p>
+					Vi er så glade for at du vil være en del af vores kundeklub
+				</p>
+				<p>
+					Tag et kig på din indbakke. Vi har givet dig fri fragt på
+					din næste ordre.
+				</p>
 
-					<Link href="/">TIL FORSIDEN</Link>
-				</div>
-			)}
+				<Link href="/">TIL FORSIDEN</Link>
+			</div>
 
 			<form className={styles.form} onSubmit={submit}>
 				<input type="text" name="name" placeholder="Fulde navn" />
