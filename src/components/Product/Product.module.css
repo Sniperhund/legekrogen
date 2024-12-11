@@ -1,4 +1,5 @@
 .card {
+	position: relative;
 	border-radius: 17px;
 	overflow: hidden;
 
@@ -24,4 +25,25 @@
 
 		font-family: var(--font-be-vietnam-pro);
 	}
+}
+
+.discount {
+	position: absolute;
+	top: 12px;
+	right: 24px;
+
+	background-color: var(--light-blue);
+
+	font-size: 3rem;
+	font-family: var(--font-square-peg);
+	color: var(--dark-blue);
+
+	/* Use something better than width and height */
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }

@@ -28,6 +28,7 @@ export const Products = async ({ recommended = false, title }) => {
 						title={p.title}
 						description={p.description}
 						price={p.price}
+						discount={p.discountInPercent}
 					/>
 				))}
 			</Suspense>
