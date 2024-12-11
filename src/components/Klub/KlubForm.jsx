@@ -1,7 +1,6 @@
 "use client"
 
-// TODO: Move this to the component
-import styles from "@/app/klub/klub.module.css"
+import styles from "./klub.module.css"
 import Link from "next/link"
 import { useState } from "react"
 

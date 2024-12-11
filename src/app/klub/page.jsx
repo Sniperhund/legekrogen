@@ -1,4 +1,4 @@
-import { KlubForm } from "@/components/KlubForm"
+import { KlubForm } from "@/components/Klub/KlubForm"
 import { Hero } from "@/components/Common/Hero"
 
 export default function Klub() {
