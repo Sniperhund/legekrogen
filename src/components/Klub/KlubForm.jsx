@@ -16,18 +16,13 @@ export const KlubForm = () => {
 		email = email.value
 		message = message.value
 
-		const response = await fetch(
-			"https://legekrogen.webmcdm.dk/subscribe",
-			{
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({ name, email, message }),
-			}
-		)
-
-		let json = await response.json()
+		await fetch("https://legekrogen.webmcdm.dk/subscribe", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({ name, email, message }),
+		})
 
 		setShowModal(true)
 	}

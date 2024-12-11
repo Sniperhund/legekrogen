@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 import styles from "@/components/Common/Common.module.css"
 import { FaBars, FaCartShopping, FaXmark } from "react-icons/fa6"
 import { usePathname } from "next/navigation"
