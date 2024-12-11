@@ -41,3 +41,54 @@
 		border-radius: 9999px;
 	}
 }
+
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+
+	z-index: 100;
+	text-align: center;
+	padding: 32px;
+
+	background-image: linear-gradient(
+			0deg,
+			rgba(148, 120, 168, 0.79) 0%,
+			rgba(148, 120, 168, 0.79) 100%
+		),
+		url(/heros/medlem.jpg);
+	background-position: center;
+	background-size: cover;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 40px;
+
+	& h1 {
+		font-family: var(--font-square-peg);
+		font-size: 5.5rem;
+	}
+
+	& p {
+		font-family: var(--font-quicksand);
+		font-size: 1.25rem;
+		font-weight: 500;
+	}
+
+	& a {
+		width: 100%;
+
+		background-color: var(--dark-blue);
+		border-radius: 50px;
+
+		font-family: var(--font-quicksand);
+		font-size: 1.25rem;
+		font-weight: 500;
+
+		padding: 16px;
+	}
+}

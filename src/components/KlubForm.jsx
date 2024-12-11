@@ -2,8 +2,12 @@
 
 // TODO: Move this to the component
 import styles from "@/app/klub/klub.module.css"
+import Link from "next/link"
+import { useState } from "react"
 
 export const KlubForm = () => {
+	const [showModal, setShowModal] = useState(false)
+
 	const submit = async (e) => {
 		e.preventDefault()
 
@@ -17,28 +21,49 @@ export const KlubForm = () => {
 			"https://legekrogen.webmcdm.dk/subscribe",
 			{
 				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
 				body: JSON.stringify({ name, email, message }),
 			}
 		)
 
 		let json = await response.json()
 
-		// TODO: Finish this with a toast
-		console.log(response, json)
+		setShowModal(true)
 	}
 
 	return (
-		<form className={styles.form} onSubmit={submit}>
-			<input type="text" name="name" placeholder="Fulde navn" />
-			<input type="email" name="email" placeholder="Email" />
+		<>
+			{showModal && (
+				<div className={styles.modal}>
+					<h1>Tak!</h1>
 
-			<textarea
-				name="message"
-				placeholder="Hvem køber du legetøj til?"
-				rows={3}
-			/>
+					<p>
+						Vi er så glade for at du vil være en del af vores
+						kundeklub
+					</p>
+					<p>
+						Tag et kig på din indbakke. Vi har givet dig fri fragt
+						på din næste ordre.
+					</p>
 
-			<input type="submit" value="Bliv medlem nu!" />
-		</form>
+					<Link href="/">TIL FORSIDEN</Link>
+				</div>
+			)}
+
+			<form className={styles.form} onSubmit={submit}>
+				<input type="text" name="name" placeholder="Fulde navn" />
+				<input type="email" name="email" placeholder="Email" />
+
+				<textarea
+					name="message"
+					placeholder="Hvem køber du legetøj til?"
+					rows={3}
+				/>
+
+				<input type="submit" value="Bliv medlem nu!" />
+			</form>
+		</>
 	)
 }
