@@ -1,5 +1,5 @@
 import { fontsClassName } from "@/util/initializeFonts"
-import "./globals.css"
+import "../globals.css"
 import { Nav } from "@/components/Common/Nav"
 import { FreeDeliveryNotice } from "@/components/Common/FreeDeliveryNotice"
 import { Newsletter } from "@/components/Common/Newsletter"

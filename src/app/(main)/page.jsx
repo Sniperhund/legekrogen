@@ -1,7 +1,7 @@
 import { Hero } from "@/components/Common/Hero"
 import { Products } from "@/components/Product/Products"
 import { Suspense } from "react"
-import { Reviews } from "../components/Review/Reviews"
+import { Reviews } from "@/components/Review/Reviews"
 
 export default async function Home() {
 	return (

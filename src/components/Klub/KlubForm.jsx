@@ -3,7 +3,6 @@
 import styles from "./klub.module.css"
 import Link from "next/link"
 import { useState } from "react"
-import { ModalNameDisplay } from "./ModalNameDisplay"
 
 export const KlubForm = () => {
 	const [showModal, setShowModal] = useState(false)
@@ -20,13 +19,13 @@ export const KlubForm = () => {
 		email = email.value
 		message = message.value
 
-		/*await fetch("https://legekrogen.webmcdm.dk/subscribe", {
+		await fetch("https://api.legekrogen.lucasskt.dk/subscribe", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
 			},
 			body: JSON.stringify({ name, email, message }),
-		})*/
+		})
 
 		setName(name)
 		setShowModal(true)
@@ -39,7 +38,7 @@ export const KlubForm = () => {
 			<div
 				className={`${styles.modal} ${showModal ? styles.active : ""}`}
 			>
-				<ModalNameDisplay name={name} />
+				<h1>Tak {name}!</h1>
 
 				<p>
 					Vi er så glade for at du vil være en del af vores kundeklub
