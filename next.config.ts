@@ -7,6 +7,10 @@ const nextConfig: NextConfig = {
 				protocol: "https",
 				hostname: "legekrogen.webmcdm.dk",
 			},
+			{
+				protocol: "https",
+				hostname: "api.legekrogen.lucasskt.dk",
+			},
 		],
 	},
 	logging: {

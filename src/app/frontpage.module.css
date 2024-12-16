@@ -5,3 +5,10 @@
 	gap: 35px;
 	padding-bottom: 110px;
 }
+
+@media screen and (min-width: 768px) {
+	.reviews {
+		max-width: 510px;
+		margin: 0 auto;
+	}
+}

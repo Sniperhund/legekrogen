@@ -2,7 +2,7 @@ import { FAQQuestion } from "./FAQQuestion"
 
 export const FrequentlyAskedQuestions = async () => {
 	let questionsAndAnswers = await fetch(
-		"https://legekrogen.webmcdm.dk/questions",
+		"https://api.legekrogen.lucasskt.dk/questions",
 		{
 			cache: "force-cache",
 		}

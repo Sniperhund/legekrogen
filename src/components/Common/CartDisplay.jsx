@@ -57,7 +57,7 @@ export const CartDisplay = ({ isCartOpen, setIsCartOpen }) => {
 			})
 		})
 
-		const response = fetch("https://legekrogen.webmcdm.dk/orders", {
+		const response = fetch("https://api.legekrogen.lucasskt.dk/orders", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",

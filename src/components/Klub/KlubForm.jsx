@@ -3,11 +3,15 @@
 import styles from "./klub.module.css"
 import Link from "next/link"
 import { useState } from "react"
+import { ModalNameDisplay } from "./ModalNameDisplay"
 
 export const KlubForm = () => {
 	const [showModal, setShowModal] = useState(false)
+	const [name, setName] = useState("")
 
 	const submit = async (e) => {
+		console.log("submit")
+
 		e.preventDefault()
 
 		let { name, email, message } = e.target
@@ -16,15 +20,18 @@ export const KlubForm = () => {
 		email = email.value
 		message = message.value
 
-		await fetch("https://legekrogen.webmcdm.dk/subscribe", {
+		/*await fetch("https://legekrogen.webmcdm.dk/subscribe", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
 			},
 			body: JSON.stringify({ name, email, message }),
-		})
+		})*/
 
+		setName(name)
 		setShowModal(true)
+
+		e.target.reset()
 	}
 
 	return (
@@ -32,7 +39,7 @@ export const KlubForm = () => {
 			<div
 				className={`${styles.modal} ${showModal ? styles.active : ""}`}
 			>
-				<h1>Tak!</h1>
+				<ModalNameDisplay name={name} />
 
 				<p>
 					Vi er så glade for at du vil være en del af vores kundeklub
@@ -53,6 +60,7 @@ export const KlubForm = () => {
 					name="message"
 					placeholder="Hvem køber du legetøj til?"
 					rows={3}
+					className="mb-[calc(80px-36px)]"
 				/>
 
 				<input type="submit" value="Bliv medlem nu!" />
