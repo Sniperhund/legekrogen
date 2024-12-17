@@ -1,8 +1,10 @@
 import { GetMonthAndYearFromDate } from "@/util/months"
 import { ChartBase } from "./ChartBase"
 
-export const ReviewsChart = async () => {
-	const chartData = await fetch("https://api.legekrogen.lucasskt.dk/reviews")
+export const NewsletterChart = async () => {
+	const chartData = await fetch(
+		"https://api.legekrogen.lucasskt.dk/subscribers"
+	)
 		.then((res) => res.json())
 		.then((data) => {
 			data = data.data

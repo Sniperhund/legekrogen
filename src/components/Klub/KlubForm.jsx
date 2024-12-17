@@ -3,10 +3,13 @@
 import styles from "./klub.module.css"
 import Link from "next/link"
 import { useState } from "react"
+import { useToast } from "@/hooks/use-toast"
 
 export const KlubForm = () => {
 	const [showModal, setShowModal] = useState(false)
 	const [name, setName] = useState("")
+
+	const { toast } = useToast()
 
 	const submit = async (e) => {
 		console.log("submit")
@@ -19,18 +22,34 @@ export const KlubForm = () => {
 		email = email.value
 		message = message.value
 
-		await fetch("https://api.legekrogen.lucasskt.dk/subscribe", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({ name, email, message }),
+		const result = await fetch(
+			"https://api.legekrogen.lucasskt.dk/subscribe",
+			{
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({ name, email, message }),
+			}
+		).then((res) => res.json())
+
+		if (result.status == "ok") {
+			setName(name)
+			setShowModal(true)
+
+			e.target.reset()
+
+			return
+		}
+
+		{
+			/* Does this look enough like the UI to use? */
+		}
+		toast({
+			title: "Åh nej, der skete en fejl",
+			description: result.message,
+			variant: "destructive",
 		})
-
-		setName(name)
-		setShowModal(true)
-
-		e.target.reset()
 	}
 
 	return (

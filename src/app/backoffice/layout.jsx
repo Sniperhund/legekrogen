@@ -5,20 +5,29 @@ import {
 	SidebarContent,
 	SidebarFooter,
 	SidebarGroup,
-	SidebarHeader,
 	SidebarProvider,
 	SidebarGroupLabel,
 	SidebarMenu,
 	SidebarMenuButton,
 	SidebarMenuItem,
 	SidebarGroupContent,
+	SidebarRail,
 } from "@/components/ui/sidebar"
-import { FaArrowLeft, FaHouse } from "react-icons/fa6"
+import {
+	FaArrowLeft,
+	FaHouse,
+	FaRightFromBracket,
+	FaUser,
+} from "react-icons/fa6"
+import { PromptLogin } from "@/components/Backoffice/PromptLogin"
+import { Signout } from "@/components/Backoffice/Signout"
 
 export default async function RootLayout({ children }) {
 	return (
 		<SidebarProvider>
-			<Sidebar>
+			<PromptLogin />
+
+			<Sidebar collapsible="icon">
 				<SidebarContent>
 					<SidebarGroup>
 						<SidebarGroupLabel>
@@ -33,20 +42,29 @@ export default async function RootLayout({ children }) {
 										</Link>
 									</SidebarMenuButton>
 								</SidebarMenuItem>
+								<SidebarMenuItem>
+									<SidebarMenuButton asChild>
+										<Link href="/backoffice/users">
+											<FaUser /> Manage users
+										</Link>
+									</SidebarMenuButton>
+								</SidebarMenuItem>
 							</SidebarMenu>
 						</SidebarGroupContent>
 					</SidebarGroup>
 				</SidebarContent>
 				<SidebarFooter>
+					<Signout />
 					<SidebarMenuButton asChild>
 						<Link href="/">
 							<FaArrowLeft /> Return to Legekrogen
 						</Link>
 					</SidebarMenuButton>
 				</SidebarFooter>
+				<SidebarRail />
 			</Sidebar>
 
-			<section className="p-4 w-full">{children}</section>
+			<section className="p-4 w-full relative">{children}</section>
 		</SidebarProvider>
 	)
 }
