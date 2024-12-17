@@ -1,7 +1,23 @@
-export default async function Backoffice() {
+import { UsersChart } from "@/components/Charts/UsersChart"
+import { ReviewsChart } from "@/components/Charts/ReviewsChart"
+import styles from "./backoffice.module.css"
+
+/**
+ * Backoffice
+ *
+ * This page should include user-, product-, review- and order-management.
+ */
+export default function Backoffice() {
 	return (
-		<>
-			<h1>Backoffice</h1>
-		</>
+		<section className={styles.backoffice}>
+			<article>
+				<p>New Users</p>
+				<UsersChart />
+			</article>
+			<article>
+				<p>New Reviews</p>
+				<ReviewsChart />
+			</article>
+		</section>
 	)
 }

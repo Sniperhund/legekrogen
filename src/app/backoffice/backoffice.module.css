@@ -1,0 +1,15 @@
+.backoffice {
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(1, minmax(300px, 1fr));
+
+	& > article p {
+		text-align: center;
+	}
+}
+
+@media (min-width: 1024px) {
+	.backoffice {
+		grid-template-columns: repeat(2, minmax(300px, 1fr));
+	}
+}
